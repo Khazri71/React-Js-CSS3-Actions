@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [isLight, setIsLight] = useState(true);
+
+  const increment = () => {
+    setCount(count + 1);
+    setIsLight(!isLight);
+  };
+
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+      setIsLight(!isLight);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className={isLight ? " content back-light" : " content back-dark"}>
+        <div className="number">
+          <h2>{count}</h2>
+        </div>
+        <div className="btn-control">
+          <button onClick={increment}>+</button>
+          <button onClick={decrement}>-</button>
+        </div>
+      </div>
     </div>
   );
 }
