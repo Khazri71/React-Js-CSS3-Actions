@@ -1,7 +1,0 @@
---NOTES--
-
-
-
---ROADMAP--
-1- Create Template With HTML5 , CSS3 : JSX
-2- Action : Increment - Decrement - Toggle Color Text And Background Color
